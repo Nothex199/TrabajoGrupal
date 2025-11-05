@@ -66,8 +66,9 @@ void buscarPaciente(Paciente*&inicio, int idBuscado){
 			cout<<"Nombre: "<<temp->nombre<<" "<<temp->apellidos<<endl;
 			cout<<"Prioridad: "<<temp->prioridad<<endl;
 			cout<<"Estado: "<<temp->estado<<endl;
+			return;
 		}
-	
+		
 		temp=temp->siguiente;
 	}cout<<"No se encuentra el paciente buscado";
 }
@@ -314,7 +315,6 @@ int main(int argc, char** argv) {
 	menuPacientes(inicio);
 	return 0;
 }
-
 
 
 
