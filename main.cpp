@@ -47,7 +47,7 @@ void EliminarPaciente(Paciente*&inicio, int idBuscado){
 			}
 			delete temp;
 			cout<<"Paciente con ID "<<idBuscado<<" eliminado"<<endl;
-			return
+			return;
 		}
 		anterior=temp;
 		temp=temp->siguiente;
@@ -65,10 +65,10 @@ void BuscarPorID(Paciente*&inicio,int idBuscado){
 			cout<<"Prioridad: "<<temp->prioridad<<endl;
 			cout<<"Estado: "<<temp->estado<<endl;
 		}
-		actual=actual->siguiente;
-	};
+		temp=temp->siguiente;
+	}
 	cout<<"No se encuentra el paciente buscado"
-}
+};
 
 //modificacion de la prioridad de un proceso
 void ModificarPrioridad (Paciente*&inicio,int idBuscado){
@@ -77,7 +77,7 @@ void ModificarPrioridad (Paciente*&inicio,int idBuscado){
 		temp=temp->siguiente;
 	}
 	if (temp==NULL){
-		cout<<"No se encontro un paciente con ese ID"<<ENDL;
+		cout<<"No se encontro un paciente con ese ID"<<endl;
 	}
 	cout<<"Paciente Encontrado";
 	cout<<"ID: "<< temp->id<<endl;
@@ -118,7 +118,7 @@ void eliminarMedicina(){
 		cout<<"La pila esta vacia. No hay elementos que eliminar"<<endl;
 		return;
 	}
-	Medicina*temp=tope //el elemento a eliminar
+	Medicina*temp=tope; //el elemento a eliminar
 	cout<<"Se elimino "<<temp->nombre<<" de la pila."<<endl;
 	tope=tope->siguiente; //el tope se mueve al siguiente nodo
 	delete temp;
@@ -141,6 +141,7 @@ int main(int argc, char** argv) {
 	cout<<"-----Comenzamos el proyecto-----"<<endl;
 	return 0;
 }
+
 
 
 
