@@ -139,8 +139,15 @@ void MostrarMedicinas(){
 
 int main(int argc, char** argv) {
 	cout<<"-----Comenzamos el proyecto-----"<<endl;
+	void MenuPacientes(Pacientes*&inicio){
+		int opcion;
+		do{
+			
+		}
+	}
 	return 0;
 }
+
 
 
 
