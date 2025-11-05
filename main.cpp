@@ -243,15 +243,11 @@ void menuPacientes(Paciente*&inicio){
 		}while (opcion!=11);
 	}
 int main(int argc, char** argv) {
-	cout<<"-----Comenzamos el proyecto-----"<<endl;
-	void MenuPacientes(Pacientes*&inicio){
-		int opcion;
-		do{
-			
-		}
-	}
+	Paciente*inicio=NULL;
+	menuPacientes(inicio);
 	return 0;
 }
+
 
 
 
