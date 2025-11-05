@@ -21,7 +21,7 @@ struct Paciente{
 };
 //insertar nuevos procesos
 void agregarAlFinal(Paciente*&inicio,int valor, string name, string apell, int prior,string status){
-	Paciente*nuevoPaciente=new Paciente(valor,name,apell,prior,status);
+	Paciente*nuevoPaciente=new Paciente(valor,name,apell,prior,status); //los pacientes inician sin medicinas
 	if (inicio==NULL){
 		inicio=nuevoPaciente;
 	}else{
@@ -98,13 +98,49 @@ void ModificarPrioridad (Paciente*&inicio,int idBuscado){
 //VISUALIZACION DE LA COLA ACTUAL
 
 //LISTA
+//Definimos la estructura 
+struct Medicina{
+	string nombre;
+	string dosis;
+	string frecuencia;
+	Medicina*siguiente; //puntero que actua como TOPE
+};
 //ASIGNACION DE MEMORIA A PROCESOS PUSH
-//LIBERACION DE MEMORIA
+Medicina* tope=NULL; //la pila empieza vacia
+void asignarMedicina(string nombre, string dosis, string frecuencia){ //puntero al paciente que asignaremos medicina
+	Medicina*nueva= new Medicina{nombre,dosis,frecuencia,tope}; //reservamos memoria y llenamos los campos, apilamos
+	tope=nueva; //ahora el nuevo nodo es el tope actual
+	cout<<"Se agrego "<<nombre<<"a la pila."<<endl;
+}
+//LIBERACION DE MEMORIA --como es pila se eleima el primer nodo qu registro
+void eliminarMedicina(){
+	if(tope==NULL){ //VERIFICAMOS SI LA PILA ESTA VACIA
+		cout<<"La pila esta vacia. No hay elementos que eliminar"<<endl;
+		return;
+	}
+	Medicina*temp=tope //el elemento a eliminar
+	cout<<"Se elimino "<<temp->nombre<<" de la pila."<<endl;
+	tope=tope->siguiente; //el tope se mueve al siguiente nodo
+	delete temp;
+}
 //ESTADO ACTUAL DE LA MEMORIA
+void MostrarMedicinas(){
+	if(tope==NULL){
+		cout<<"La pila esta vacia."<<endl;
+		return;
+	}
+	Medicina*temp=tope;
+	cout<<"Estado actual de la pila: ";
+	while(temp != NULL){
+		cout<<"-"<<temp->nombre<<"("<<temp->dosis<<" ,"<<temp->frecuencia<<" )"<<endl;
+		temp=temp->siguiente;
+	}
+}
 
 int main(int argc, char** argv) {
 	cout<<"-----Comenzamos el proyecto-----"<<endl;
 	return 0;
 }
+
 
 
