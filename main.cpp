@@ -67,10 +67,10 @@ void buscarPaciente(Paciente*&inicio, int idBuscado){
 			cout<<"Prioridad: "<<temp->prioridad<<endl;
 			cout<<"Estado: "<<temp->estado<<endl;
 			return;
-		}
-		
+		}	
 		temp=temp->siguiente;
-	}cout<<"No se encuentra el paciente buscado";
+	}
+	cout<<"No se encuentra el paciente buscado";
 }
 
 //modificacion de la prioridad de un proceso
@@ -315,6 +315,7 @@ int main(int argc, char** argv) {
 	menuPacientes(inicio);
 	return 0;
 }
+
 
 
 
